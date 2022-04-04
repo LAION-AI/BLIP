@@ -1,4 +1,3 @@
-from models.med import BertConfig, BertModel
 from transformers import BertTokenizer
 
 import torch
@@ -7,8 +6,12 @@ import torch.nn.functional as F
 try:
     
     from BLIP.models.blip import create_vit, init_tokenizer, load_checkpoint
+    from BLIP.models.med import BertConfig, BertModel
+
 except:
     from models.blip import create_vit, init_tokenizer, load_checkpoint
+    from models.med import BertConfig, BertModel
+
 class BLIP_ITM(nn.Module):
     def __init__(self,                 
                  med_config = 'configs/med_config.json',  
