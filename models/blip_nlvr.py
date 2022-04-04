@@ -1,7 +1,15 @@
-from models.med import BertConfig
-from models.nlvr_encoder import BertModel
-from models.vit import interpolate_pos_embed
-from models.blip import create_vit, init_tokenizer, is_url
+try:
+    from BLIP.models.med import BertConfig
+    from BLIP.models.nlvr_encoder import BertModel
+    from BLIP.models.vit import interpolate_pos_embed
+    from BLIP.models.blip import create_vit, init_tokenizer, is_url
+
+except:
+
+    from models.med import BertConfig
+    from models.nlvr_encoder import BertModel
+    from models.vit import interpolate_pos_embed
+    from models.blip import create_vit, init_tokenizer, is_url
 
 from timm.models.hub import download_cached_file
 
